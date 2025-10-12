@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="BACKGROUND" prefHeight="900.0" prefWidth="953.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mis.mygamejavafx.GameViewController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="74.0" prefWidth="390.0" text="按鈕翻轉遊戲">
+         <font>
+            <Font name="Microsoft JhengHei Bold" size="53.0" />
+         </font>
+      </Label>
+      <GridPane fx:id="Table" gridLinesVisible="true" layoutX="104.0" layoutY="150.0" prefHeight="600.0" prefWidth="600.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+      <TextArea editable="false" layoutX="711.0" layoutY="235.0" prefHeight="515.0" prefWidth="235.0" text="請先選擇遊戲難度，&#10;按下開始玩按鈕。&#10;遊戲目標：&#10;將白色按鈕全部點亮，&#10;方可取得一次勝利。&#10;&#10;一旦按下取消本局，&#10;或重新調整難度，&#10;將重製連續勝利次數。&#10;&#10;每次點擊按鈕，&#10;都會將其周圍十字按鈕&#10;同時點亮。">
+         <font>
+            <Font name="Microsoft JhengHei" size="20.0" />
+         </font>
+      </TextArea>
+      <Button fx:id="But_def" layoutX="14.0" layoutY="150.0" mnemonicParsing="false" onAction="#Change_color" prefHeight="60.0" prefWidth="60.0" visible="false" />
+      <Button fx:id="Start_game" disable="true" layoutX="360.0" layoutY="21.0" mnemonicParsing="false" onAction="#Start_Game" prefHeight="61.0" prefWidth="180.0" style="-fx-font-size: 30;" styleClass="success" stylesheets="@../../css/bootstrap3.css" text="開始玩！" />
+
+      <ChoiceBox fx:id="diff_sel" layoutX="294.0" layoutY="764.0" onAction="#handleChoiceBoxAction" prefHeight="60.0" prefWidth="250.0" />
+
+      <Button fx:id="close_game" disable="true" layoutX="570.0" layoutY="21.0" mnemonicParsing="false" onAction="#Close_Game" prefHeight="22.0" prefWidth="180.0" style="-fx-font-size: 30;" styleClass="danger" stylesheets="@../../css/bootstrap3.css" text="取消本局" />
+      <Label fx:id="Out_win_counter" layoutX="44.0" layoutY="821.0" prefHeight="54.0" prefWidth="243.0" text="連續勝利：0">
+         <font>
+            <Font name="Microsoft JhengHei UI Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="diff_show" layoutX="44.0" layoutY="767.0" prefHeight="54.0" prefWidth="250.0" text="目前難度：請選擇">
+         <font>
+            <Font name="Microsoft JhengHei UI Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="InGame_Counter" layoutX="720.0" layoutY="150.0" prefHeight="29.0" prefWidth="170.0" text="本局步數：0">
+         <font>
+            <Font name="Microsoft JhengHei" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="720.0" layoutY="196.0" prefHeight="29.0" prefWidth="156.0" text="遊戲說明：">
+         <font>
+            <Font name="Microsoft JhengHei" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="Win_Show" layoutX="170.0" layoutY="360.0" prefHeight="123.0" prefWidth="489.0" text="本局獲勝!!" textFill="#25a42e" visible="false">
+         <font>
+            <Font name="Microsoft JhengHei UI Bold" size="96.0" />
+         </font>
+      </Label>
+      <Label fx:id="Start_Show" layoutX="170.0" layoutY="360.0" prefHeight="123.0" prefWidth="489.0" text="遊戲開始!!" visible="false">
+         <font>
+            <Font name="Microsoft JhengHei UI Bold" size="96.0" />
+         </font>
+      </Label>
+      <Label fx:id="Stop_Show" layoutX="210.0" layoutY="360.0" prefHeight="123.0" prefWidth="489.0" text="遊戲中止" textFill="#d31414" visible="false">
+         <font>
+            <Font name="Microsoft JhengHei UI Bold" size="96.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
