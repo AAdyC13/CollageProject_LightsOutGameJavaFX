@@ -1,4 +1,4 @@
-# CollageProject_LightsOutGameJavaFX
+# LightsOutGameJavaFX
 Collage project: LightsOutGameJavaFX
 
 大學作品：燈滅遊戲
